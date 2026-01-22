@@ -135,10 +135,13 @@ export function Footer() {
       <div className="relative z-10 border-t border-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-500 text-sm text-center md:text-left flex items-center gap-1">
-              © {new Date().getFullYear()} BIET Davangere. Made with
-              <Heart className="w-4 h-4 text-red-500 fill-red-500" />
-              by UNICS Forum
+            <p className="text-gray-500 text-sm text-center md:text-left flex flex-wrap items-center justify-center md:justify-start gap-1">
+              <span>© {new Date().getFullYear()} BIET Davangere.</span>
+              <span className="flex items-center gap-1">
+                Made with
+                <Heart className="w-4 h-4 text-red-500 fill-red-500 inline-block" />
+                by UNICS Forum
+              </span>
             </p>
 
             <div className="flex items-center gap-6">
