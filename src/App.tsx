@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { Themes } from '@/components/Themes';
@@ -37,6 +38,7 @@ export function App() {
         <CTA />
       </main>
       <Footer />
+      <SpeedInsights />
     </div>
   );
 }
