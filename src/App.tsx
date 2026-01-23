@@ -10,6 +10,7 @@ import { Footer } from '@/components/Footer';
 import { ParticleCursor } from '@/components/ParticleCursor';
 import { FloatingCode } from '@/components/FloatingCode';
 import { FAQ } from '@/components/FAQ';
+import { Analytics } from '@vercel/analytics/react';
 
 export function App() {
   return (
@@ -37,6 +38,7 @@ export function App() {
         <CTA />
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 }
