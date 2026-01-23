@@ -15,7 +15,7 @@ export function ParticleCursor() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const particlesRef = useRef<Particle[]>([]);
     const mouseRef = useRef({ x: 0, y: 0 });
-    const animationRef = useRef<number>();
+    const animationRef = useRef<number | undefined>(undefined);
 
     useEffect(() => {
         // Disable on mobile/touch devices for performance
