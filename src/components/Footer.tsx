@@ -125,7 +125,7 @@ export function Footer() {
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-orange-500 to-red-600 text-black font-bold text-sm rounded-full"
             >
               <Zap className="w-4 h-4" />
-              Register Now
+              Coming Soon
             </motion.a>
           </motion.div>
         </div>

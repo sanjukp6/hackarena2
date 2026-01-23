@@ -172,21 +172,70 @@ export function Hero() {
 
       <motion.div
         style={{ y, opacity, scale }}
-        className="relative z-10 text-center px-4 max-w-6xl mx-auto pt-20 md:pt-0"
+        className="relative z-10 text-center px-4 max-w-6xl mx-auto pt-32 md:pt-16"
       >
+
         {/* Status Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-orange-500/10 to-red-500/10 backdrop-blur-sm rounded-full border border-orange-500/30 mb-4 md:mb-8"
         >
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
           </span>
-          <span className="text-orange-300 text-xs md:text-sm font-medium">Registrations Open</span>
+          <span className="text-orange-300 text-xs md:text-sm font-medium">Registrations Open Soon</span>
           <Sparkles className="w-3 h-3 md:w-4 md:h-4 text-orange-400" />
+        </motion.div>
+
+        {/* College Branding */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="flex flex-col items-center gap-3 mb-6 md:mb-8"
+        >
+          {/* All Three Logos in a Row */}
+          <div className="flex items-center justify-center gap-4 md:gap-6">
+            {/* BIET Logo */}
+            <motion.img
+              src="/biet-logo.png"
+              alt="BIET Logo"
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3 }}
+              className="w-12 h-12 md:w-16 md:h-16 object-contain"
+            />
+
+            {/* UNICS Logo */}
+            <motion.img
+              src="/unics-logo.png"
+              alt="UNICS Logo"
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3 }}
+              className="w-12 h-12 md:w-16 md:h-16 object-contain"
+            />
+
+            {/* Binary Blooms Logo */}
+            <motion.img
+              src="/binary-blooms-logo.png"
+              alt="Binary Blooms Logo"
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3 }}
+              className="w-12 h-12 md:w-16 md:h-16 object-contain"
+            />
+          </div>
+
+          {/* College Name */}
+          <div className="flex flex-col text-center">
+            <span className="text-[10px] md:text-xs font-semibold text-orange-400 tracking-wide">
+              BAPUJI EDUCATIONAL ASSOCIATION (REGD)
+            </span>
+            <span className="text-xs md:text-sm font-bold text-white leading-tight">
+              BAPUJI INSTITUTE OF ENGINEERING AND TECHNOLOGY
+            </span>
+          </div>
         </motion.div>
 
         {/* Main Title with 3D Letter Animation */}
@@ -232,11 +281,11 @@ export function Hero() {
         >
           <p className="text-xl md:text-2xl lg:text-3xl text-gray-300">
             National Level Hackathon at{' '}
-            <span className="font-bold text-white">BIET Davangere</span>
+            <span className="font-bold text-white">BIET,Davangere</span>
           </p>
           <p className="text-base md:text-lg text-gray-500">
             Department of Computer Science & Engineering, under the{' '}
-            <span className="text-red-400 font-semibold">UNICS Forum</span>
+            <span className="text-red-400 font-semibold">UniCS Forum</span>
           </p>
         </motion.div>
 
@@ -301,7 +350,7 @@ export function Hero() {
             className="group relative px-8 py-4 bg-gradient-to-r from-orange-500 via-red-500 to-amber-500 rounded-full overflow-hidden"
           >
             <span className="relative z-10 flex items-center gap-2 font-display font-bold text-black text-lg">
-              Register Now
+              Coming Soon
               <motion.span
                 animate={{ x: [0, 5, 0] }}
                 transition={{ repeat: Infinity, duration: 1.5 }}

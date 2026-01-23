@@ -32,7 +32,7 @@ export interface Coordinator {
   role: string;
   designation?: string;
   phone?: string;
-  category: 'program' | 'forum' | 'faculty' | 'student';
+  category: 'program' | 'leadership' | 'forum' | 'faculty' | 'student';
 }
 
 export interface Sponsor {

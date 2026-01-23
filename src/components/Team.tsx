@@ -12,6 +12,18 @@ const coordinators: Coordinator[] = [
     category: 'program',
   },
   {
+    id: 'principal',
+    name: 'Dr. Aravinda',
+    role: 'Principal',
+    category: 'leadership',
+  },
+  {
+    id: 'director',
+    name: 'Prof. Y Vrushabhendrappa',
+    role: 'Director',
+    category: 'leadership',
+  },
+  {
     id: '2',
     name: 'Dr. Santhosh K C',
     role: 'UNICS Forum Coordinator',
@@ -68,6 +80,7 @@ export function Team() {
 
   const groupedCoordinators = {
     program: coordinators.filter((c) => c.category === 'program'),
+    leadership: coordinators.filter((c) => c.category === 'leadership'),
     forum: coordinators.filter((c) => c.category === 'forum'),
     faculty: coordinators.filter((c) => c.category === 'faculty'),
     student: coordinators.filter((c) => c.category === 'student'),
@@ -150,76 +163,116 @@ export function Team() {
               <Crown className="w-6 h-6" />
             </div>
             <h3 className="font-display text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500">
-              Program Coordinator
+              Leadership & Program Coordinator
             </h3>
             <div className="flex-1 h-px bg-gradient-to-r from-red-500/50 to-transparent" />
           </div>
 
-          {groupedCoordinators.program.map((coordinator) => (
-            <motion.div
-              key={coordinator.id}
-              whileHover={{ scale: 1.02 }}
-              className="relative group"
-            >
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-red-500/30 to-orange-500/30 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          {/* Grid for HOD and Leadership */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* HOD Card */}
+            {groupedCoordinators.program.map((coordinator) => (
+              <motion.div
+                key={coordinator.id}
+                whileHover={{ scale: 1.02 }}
+                className="relative group"
+              >
+                {/* Glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-red-500/30 to-orange-500/30 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="relative p-5 md:p-6 rounded-2xl bg-gradient-to-br from-gray-900/90 to-gray-800/50 backdrop-blur-xl border border-red-500/30 overflow-hidden">
-                {/* Background decorations */}
-                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-full blur-3xl" />
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-orange-500/10 to-red-500/10 rounded-full blur-3xl" />
+                <div className="relative h-full p-4 md:p-5 rounded-2xl bg-gradient-to-br from-gray-900/90 to-gray-800/50 backdrop-blur-xl border border-red-500/30 overflow-hidden">
+                  {/* Background decorations */}
+                  <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-full blur-3xl" />
 
-                <div className="relative z-10 flex flex-col md:flex-row items-center gap-5">
-                  {/* Avatar */}
-                  <motion.div
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.8 }}
-                    className="relative"
-                  >
-                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-red-500 to-orange-500 p-1">
-                      <div className="w-full h-full rounded-2xl bg-gray-900 flex items-center justify-center">
-                        <Crown className="w-10 h-10 text-red-400" />
+                  <div className="relative z-10 flex flex-col items-center text-center gap-3">
+                    {/* Avatar */}
+                    <motion.div
+                      whileHover={{ rotate: 360, scale: 1.1 }}
+                      transition={{ duration: 0.8 }}
+                      className="relative"
+                    >
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-red-500 to-orange-500 p-1">
+                        <div className="w-full h-full rounded-2xl bg-gray-900 flex items-center justify-center">
+                          <Crown className="w-8 h-8 text-red-400" />
+                        </div>
                       </div>
-                    </div>
-                    {/* Status indicator */}
-                    <div className="absolute -bottom-2 -right-2 px-3 py-1 bg-gradient-to-r from-red-500 to-orange-500 rounded-full text-xs font-bold text-white">
-                      HEAD
-                    </div>
-                  </motion.div>
+                      {/* Status indicator */}
+                      <div className="absolute -bottom-2 -right-2 px-2 py-0.5 bg-gradient-to-r from-red-500 to-orange-500 rounded-full text-[10px] font-bold text-white">
+                        HEAD
+                      </div>
+                    </motion.div>
 
-                  {/* Info */}
-                  <div className="text-center md:text-left flex-1">
-                    <h4 className="font-display text-xl md:text-2xl font-black text-white mb-1">
-                      {coordinator.name}
-                    </h4>
-                    <p className="text-red-400 font-semibold text-sm mb-1">
-                      {coordinator.role}
-                    </p>
-                    {coordinator.designation && (
-                      <p className="text-gray-400 text-sm">
-                        {coordinator.designation}
+                    {/* Info */}
+                    <div>
+                      <h4 className="font-display text-lg md:text-xl font-black text-white mb-1">
+                        {coordinator.name}
+                      </h4>
+                      <p className="text-red-400 font-semibold text-sm mb-0.5">
+                        {coordinator.role}
                       </p>
-                    )}
+                      {coordinator.designation && (
+                        <p className="text-gray-400 text-xs">
+                          {coordinator.designation}
+                        </p>
+                      )}
+                    </div>
                   </div>
 
-                  {/* Decorative element */}
-                  <div className="hidden lg:flex flex-col items-center gap-2">
-                    {[...Array(5)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
-                        transition={{ duration: 2, delay: i * 0.2, repeat: Infinity }}
-                        className="w-2 h-2 rounded-full bg-red-400"
-                      />
-                    ))}
-                  </div>
+                  {/* Shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                 </div>
+              </motion.div>
+            ))}
 
-                {/* Shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-              </div>
-            </motion.div>
-          ))}
+            {/* Principal and Director Cards */}
+            {groupedCoordinators.leadership.map((leader) => (
+              <motion.div
+                key={leader.id}
+                whileHover={{ scale: 1.02 }}
+                className="relative group"
+              >
+                {/* Glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-500/30 to-yellow-500/30 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="relative h-full p-4 md:p-5 rounded-2xl bg-gradient-to-br from-gray-900/90 to-gray-800/50 backdrop-blur-xl border border-amber-500/30 overflow-hidden">
+                  {/* Background decorations */}
+                  <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-amber-500/10 to-yellow-500/10 rounded-full blur-3xl" />
+
+                  <div className="relative z-10 flex flex-col items-center text-center gap-3">
+                    {/* Avatar */}
+                    <motion.div
+                      whileHover={{ rotate: 360, scale: 1.1 }}
+                      transition={{ duration: 0.8 }}
+                      className="relative"
+                    >
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-amber-500 to-yellow-500 p-1">
+                        <div className="w-full h-full rounded-2xl bg-gray-900 flex items-center justify-center">
+                          <Crown className="w-8 h-8 text-amber-400" />
+                        </div>
+                      </div>
+                      {/* Role indicator */}
+                      <div className="absolute -bottom-2 -right-2 px-2 py-0.5 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full text-[10px] font-bold text-black">
+                        {leader.role === 'Principal' ? 'PRINCIPAL' : 'DIRECTOR'}
+                      </div>
+                    </motion.div>
+
+                    {/* Info */}
+                    <div>
+                      <h4 className="font-display text-lg md:text-xl font-black text-white mb-1">
+                        {leader.name}
+                      </h4>
+                      <p className="text-amber-400 font-semibold text-sm">
+                        {leader.role}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Forum Coordinators */}

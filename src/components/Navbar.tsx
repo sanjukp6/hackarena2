@@ -114,7 +114,7 @@ export function Navbar() {
               whileTap={{ scale: 0.95 }}
               className="hidden md:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 via-red-500 to-amber-500 text-black font-bold text-sm rounded-full relative overflow-hidden group"
             >
-              <span className="relative z-10">Register Now</span>
+              <span className="relative z-10">Coming Soon</span>
               <Zap className="w-4 h-4 relative z-10" />
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-amber-500 via-red-500 to-orange-500"
@@ -179,7 +179,7 @@ export function Navbar() {
                   transition={{ delay: 0.3 }}
                   className="block w-full text-center px-6 py-4 bg-gradient-to-r from-orange-500 via-red-500 to-amber-500 text-black font-bold rounded-full mt-4"
                 >
-                  Register Now
+                  Coming Soon
                 </motion.a>
               </div>
             </motion.div>
