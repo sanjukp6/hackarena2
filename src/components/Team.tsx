@@ -516,7 +516,7 @@ export function Team() {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Need help? Reach out to us</p>
-                  <p className="font-bold text-white">hackarena@bfriengineeringedu.org</p>
+                  <p className="font-bold text-white">biet.hackarena@gmail.com</p>
                 </div>
               </div>
               <motion.a
