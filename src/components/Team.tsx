@@ -520,7 +520,7 @@ export function Team() {
                 </div>
               </div>
               <motion.a
-                href="mailto:hackarena@bfriengineeringedu.org"
+                href="mailto:biet.hackarena@gmail.com"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-5 py-2.5 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg font-bold text-white hover:shadow-lg hover:shadow-orange-500/30 transition-shadow text-sm"

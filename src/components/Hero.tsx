@@ -334,48 +334,7 @@ export function Hero() {
           <CountdownTimer />
         </motion.div>
 
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.4 }}
-          className="flex flex-wrap justify-center gap-4"
-        >
-          <motion.a
-            href="https://unstop.com/hackathon"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative px-8 py-4 bg-gradient-to-r from-orange-500 via-red-500 to-amber-500 rounded-full overflow-hidden"
-          >
-            <span className="relative z-10 flex items-center gap-2 font-display font-bold text-black text-lg">
-              Coming Soon
-              <motion.span
-                animate={{ x: [0, 5, 0] }}
-                transition={{ repeat: Infinity, duration: 1.5 }}
-              >
-                →
-              </motion.span>
-            </span>
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-amber-500 via-red-500 to-orange-500"
-              initial={{ x: '100%' }}
-              whileHover={{ x: 0 }}
-              transition={{ duration: 0.3 }}
-            />
-          </motion.a>
 
-          <motion.a
-            href="#themes"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 border-2 border-gray-700 text-white rounded-full font-display font-bold text-lg hover:border-orange-500 hover:text-orange-400 transition-all duration-300 relative overflow-hidden group"
-          >
-            <span className="relative z-10">Explore Themes</span>
-            <div className="absolute inset-0 bg-orange-500/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-          </motion.a>
-        </motion.div>
       </motion.div>
 
       {/* Scroll Indicator */}

@@ -116,7 +116,7 @@ export function CyberGrid() {
           rotate: { duration: 30, repeat: Infinity, ease: 'linear' },
           scale: { duration: 5, repeat: Infinity, ease: 'easeInOut' },
         }}
-        className="absolute top-20 right-20 w-32 h-32 border border-orange-500/30 rounded-lg opacity-50"
+        className="absolute top-20 right-20 w-32 h-32 border border-orange-500/30 rounded-lg opacity-50 pointer-events-none"
         style={{ transformOrigin: 'center' }}
       />
       <motion.div
@@ -128,7 +128,7 @@ export function CyberGrid() {
           rotate: { duration: 25, repeat: Infinity, ease: 'linear' },
           y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
         }}
-        className="absolute bottom-40 left-20 w-24 h-24 border border-magenta-500/30"
+        className="absolute bottom-40 left-20 w-24 h-24 border border-magenta-500/30 pointer-events-none"
         style={{
           borderColor: 'rgba(239, 68, 68, 0.3)',
           clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)'
@@ -143,7 +143,7 @@ export function CyberGrid() {
           repeat: Infinity,
           ease: 'linear',
         }}
-        className="absolute top-1/3 left-1/4 w-40 h-40 border border-red-500/20 rounded-full"
+        className="absolute top-1/3 left-1/4 w-40 h-40 border border-red-500/20 rounded-full pointer-events-none"
       />
     </>
   );
