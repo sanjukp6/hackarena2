@@ -13,7 +13,7 @@ const coordinators: Coordinator[] = [
   },
   {
     id: 'principal',
-    name: 'Dr. Aravinda',
+    name: 'Dr. H B Aravind',
     role: 'Principal',
     category: 'leadership',
   },
