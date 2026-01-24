@@ -25,7 +25,7 @@ const coordinators: Coordinator[] = [
   },
   {
     id: '2',
-    name: 'Dr. Santhosh K C',
+    name: 'Dr. Santosh K C',
     role: 'UNICS Forum Coordinator',
     category: 'forum',
   },
@@ -49,7 +49,7 @@ const coordinators: Coordinator[] = [
   },
   {
     id: '6',
-    name: 'Prof. Nomitha',
+    name: 'Prof. Nomitha Chawla',
     role: 'Faculty Coordinator',
     category: 'faculty',
   },
@@ -156,7 +156,7 @@ export function Team() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="mb-8 md:mb-12"
         >
           <div className="flex items-center gap-2 mb-4">
             <div className="w-10 h-10 rounded-xl bg-red-500/20 flex items-center justify-center text-red-400">
@@ -169,106 +169,94 @@ export function Team() {
           </div>
 
           {/* Grid for HOD and Leadership */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
             {/* HOD Card */}
-            {groupedCoordinators.program.map((coordinator) => (
+            {groupedCoordinators.program.map((coordinator, index) => (
               <motion.div
                 key={coordinator.id}
-                whileHover={{ scale: 1.02 }}
-                className="relative group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                whileHover={{ scale: 1.05, y: -10 }}
+                className="group"
               >
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-red-500/30 to-orange-500/30 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative h-full p-2 md:p-4 rounded-xl md:rounded-2xl bg-gradient-to-br from-gray-900/90 to-gray-800/50 backdrop-blur-xl border border-red-500/20 overflow-hidden hover:border-red-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-red-500/20">
+                  {/* Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/0 to-orange-500/0 group-hover:from-red-500/10 group-hover:to-orange-500/10 transition-all duration-500" />
 
-                <div className="relative h-full p-4 md:p-5 rounded-2xl bg-gradient-to-br from-gray-900/90 to-gray-800/50 backdrop-blur-xl border border-red-500/30 overflow-hidden">
-                  {/* Background decorations */}
-                  <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-full blur-3xl" />
-
-                  <div className="relative z-10 flex flex-col items-center text-center gap-3">
-                    {/* Avatar */}
-                    <motion.div
-                      whileHover={{ rotate: 360, scale: 1.1 }}
-                      transition={{ duration: 0.8 }}
-                      className="relative"
-                    >
-                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-red-500 to-orange-500 p-1">
-                        <div className="w-full h-full rounded-2xl bg-gray-900 flex items-center justify-center">
-                          <Crown className="w-8 h-8 text-red-400" />
-                        </div>
-                      </div>
-                      {/* Status indicator */}
-                      <div className="absolute -bottom-2 -right-2 px-2 py-0.5 bg-gradient-to-r from-red-500 to-orange-500 rounded-full text-[10px] font-bold text-white">
-                        HEAD
-                      </div>
-                    </motion.div>
-
-                    {/* Info */}
-                    <div>
-                      <h4 className="font-display text-lg md:text-xl font-black text-white mb-1">
-                        {coordinator.name}
-                      </h4>
-                      <p className="text-red-400 font-semibold text-sm mb-0.5">
-                        {coordinator.role}
-                      </p>
-                      {coordinator.designation && (
-                        <p className="text-gray-400 text-xs">
-                          {coordinator.designation}
-                        </p>
-                      )}
+                  {/* Avatar */}
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                    className="relative w-10 h-10 md:w-14 md:h-14 mx-auto mb-2 md:mb-3 rounded-lg md:rounded-xl bg-gradient-to-br from-red-500 to-orange-500 p-0.5"
+                  >
+                    <div className="w-full h-full rounded-lg md:rounded-xl bg-gray-900 flex items-center justify-center">
+                      <Crown className="w-5 h-5 md:w-7 md:h-7 text-red-400" />
                     </div>
-                  </div>
+                    {/* Status indicator */}
+                    <div className="absolute -bottom-1 -right-1 px-1.5 py-0.5 bg-gradient-to-r from-red-500 to-orange-500 rounded-full text-[8px] md:text-[10px] font-bold text-white">
+                      HEAD
+                    </div>
+                  </motion.div>
 
-                  {/* Shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  <h4 className="font-display text-xs md:text-base font-bold text-white text-center mb-0.5 md:mb-1">
+                    {coordinator.name}
+                  </h4>
+                  <p className="text-red-400 font-medium text-center text-xs md:text-sm">
+                    {coordinator.role}
+                  </p>
+                  {coordinator.designation && (
+                    <p className="text-gray-400 text-center text-[10px] md:text-xs">
+                      {coordinator.designation}
+                    </p>
+                  )}
+
+                  {/* Bottom accent */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
                 </div>
               </motion.div>
             ))}
 
             {/* Principal and Director Cards */}
-            {groupedCoordinators.leadership.map((leader) => (
+            {groupedCoordinators.leadership.map((leader, index) => (
               <motion.div
                 key={leader.id}
-                whileHover={{ scale: 1.02 }}
-                className="relative group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: (index + 1) * 0.15 }}
+                whileHover={{ scale: 1.05, y: -10 }}
+                className="group"
               >
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-500/30 to-yellow-500/30 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative h-full p-2 md:p-4 rounded-xl md:rounded-2xl bg-gradient-to-br from-gray-900/90 to-gray-800/50 backdrop-blur-xl border border-amber-500/20 overflow-hidden hover:border-amber-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-amber-500/20">
+                  {/* Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500/0 to-yellow-500/0 group-hover:from-amber-500/10 group-hover:to-yellow-500/10 transition-all duration-500" />
 
-                <div className="relative h-full p-4 md:p-5 rounded-2xl bg-gradient-to-br from-gray-900/90 to-gray-800/50 backdrop-blur-xl border border-amber-500/30 overflow-hidden">
-                  {/* Background decorations */}
-                  <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-amber-500/10 to-yellow-500/10 rounded-full blur-3xl" />
-
-                  <div className="relative z-10 flex flex-col items-center text-center gap-3">
-                    {/* Avatar */}
-                    <motion.div
-                      whileHover={{ rotate: 360, scale: 1.1 }}
-                      transition={{ duration: 0.8 }}
-                      className="relative"
-                    >
-                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-amber-500 to-yellow-500 p-1">
-                        <div className="w-full h-full rounded-2xl bg-gray-900 flex items-center justify-center">
-                          <Crown className="w-8 h-8 text-amber-400" />
-                        </div>
-                      </div>
-                      {/* Role indicator */}
-                      <div className="absolute -bottom-2 -right-2 px-2 py-0.5 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full text-[10px] font-bold text-black">
-                        {leader.role === 'Principal' ? 'PRINCIPAL' : 'DIRECTOR'}
-                      </div>
-                    </motion.div>
-
-                    {/* Info */}
-                    <div>
-                      <h4 className="font-display text-lg md:text-xl font-black text-white mb-1">
-                        {leader.name}
-                      </h4>
-                      <p className="text-amber-400 font-semibold text-sm">
-                        {leader.role}
-                      </p>
+                  {/* Avatar */}
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                    className="relative w-10 h-10 md:w-14 md:h-14 mx-auto mb-2 md:mb-3 rounded-lg md:rounded-xl bg-gradient-to-br from-amber-500 to-yellow-500 p-0.5"
+                  >
+                    <div className="w-full h-full rounded-lg md:rounded-xl bg-gray-900 flex items-center justify-center">
+                      <Crown className="w-5 h-5 md:w-7 md:h-7 text-amber-400" />
                     </div>
-                  </div>
+                    {/* Role indicator */}
+                    <div className="absolute -bottom-1 -right-1 px-1.5 py-0.5 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full text-[8px] md:text-[10px] font-bold text-black">
+                      {leader.role === 'Principal' ? 'PRINCIPAL' : 'DIRECTOR'}
+                    </div>
+                  </motion.div>
 
-                  {/* Shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  <h4 className="font-display text-xs md:text-base font-bold text-white text-center mb-0.5 md:mb-1">
+                    {leader.name}
+                  </h4>
+                  <p className="text-amber-400 font-medium text-center text-xs md:text-sm">
+                    {leader.role}
+                  </p>
+
+                  {/* Bottom accent */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-yellow-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
                 </div>
               </motion.div>
             ))}

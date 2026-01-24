@@ -106,23 +106,13 @@ export function Navbar() {
             </div>
 
             {/* CTA Button */}
-            <motion.a
-              href="https://unstop.com/hackathon"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.div
               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="hidden md:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 via-red-500 to-amber-500 text-black font-bold text-sm rounded-full relative overflow-hidden group"
+              className="hidden md:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 via-red-500 to-amber-500 text-black font-bold text-sm rounded-full cursor-default"
             >
-              <span className="relative z-10">Coming Soon</span>
+              <span className="relative z-10">Registration Open Soon</span>
               <Zap className="w-4 h-4 relative z-10" />
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-amber-500 via-red-500 to-orange-500"
-                initial={{ x: '100%' }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.a>
+            </motion.div>
 
             {/* Mobile Menu Button */}
             <button
@@ -170,17 +160,14 @@ export function Navbar() {
                     {link.label}
                   </motion.a>
                 ))}
-                <motion.a
-                  href="https://unstop.com/hackathon"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="block w-full text-center px-6 py-4 bg-gradient-to-r from-orange-500 via-red-500 to-amber-500 text-black font-bold rounded-full mt-4"
+                  className="block w-full text-center px-6 py-4 bg-gradient-to-r from-orange-500 via-red-500 to-amber-500 text-black font-bold rounded-full mt-4 cursor-default"
                 >
-                  Coming Soon
-                </motion.a>
+                  Registration Open Soon
+                </motion.div>
               </div>
             </motion.div>
           )}

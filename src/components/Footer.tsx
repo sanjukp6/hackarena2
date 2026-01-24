@@ -3,10 +3,9 @@ import { Github, Twitter, Linkedin, Instagram, Mail, MapPin, Zap, Heart } from '
 
 export function Footer() {
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
+
+    { icon: Linkedin, href: 'https://www.linkedin.com/school/bapuji-institute-of-engineering-&-technology-davanagere/posts/?feedView=all', label: 'LinkedIn' },
+    { icon: Instagram, href: 'https://www.instagram.com/biet__cse/', label: 'Instagram' },
   ];
 
   const quickLinks = [
@@ -61,7 +60,7 @@ export function Footer() {
             <div className="flex items-center gap-3 text-gray-400">
               <Mail className="w-5 h-5 text-red-400" />
               <a href="mailto:hackarena@bietdvg.edu" className="hover:text-white transition-colors">
-                hackarena@bietdvg.edu
+                biet.hackarena@gmail.com
               </a>
             </div>
           </motion.div>
@@ -116,17 +115,13 @@ export function Footer() {
             </div>
 
             {/* Register CTA */}
-            <motion.a
-              href="https://unstop.com/hackathon"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.div
               whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-orange-500 to-red-600 text-black font-bold text-sm rounded-full"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-orange-500 to-red-600 text-black font-bold text-sm rounded-full cursor-default"
             >
               <Zap className="w-4 h-4" />
-              Coming Soon
-            </motion.a>
+              Registration Open Soon
+            </motion.div>
           </motion.div>
         </div>
       </div>

@@ -1,46 +1,46 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { Sprout, Landmark, HeartPulse, Glasses, Lightbulb } from 'lucide-react';
+import { Globe, Landmark, HeartPulse, ShieldCheck, Lightbulb } from 'lucide-react';
 import type { Theme } from '@/types';
 
 const themes: Theme[] = [
   {
-    id: 'agriculture',
-    title: 'Agriculture',
-    icon: 'sprout',
-    description: 'Smart farming, crop monitoring, supply chain solutions for sustainable agriculture.',
+    id: 'digital-inclusion',
+    title: 'Digital Inclusion & Resilient Intelligence',
+    icon: 'globe',
+    description: 'Bridging the digital divide with accessible technology, smart infrastructure, and AI-driven solutions for underserved communities.',
   },
   {
     id: 'fintech',
-    title: 'Fintech',
+    title: 'Algorithmic Finance & Embedded Fintech',
     icon: 'landmark',
-    description: 'Digital payments, blockchain solutions, financial inclusion and security innovations.',
+    description: 'Next-gen financial algorithms, embedded banking, decentralized finance, and intelligent trading systems.',
   },
   {
-    id: 'healthcare',
-    title: 'Healthcare',
+    id: 'bioconvergence',
+    title: 'Bioconvergence & Precision Health',
     icon: 'heart',
-    description: 'Telemedicine, health monitoring, AI diagnostics, and patient care solutions.',
+    description: 'Merging biology with technology for personalized medicine, genomics, AI diagnostics, and advanced healthcare solutions.',
   },
   {
-    id: 'arvr',
-    title: 'AR/VR',
-    icon: 'glasses',
-    description: 'Immersive experiences, virtual training, augmented reality applications.',
+    id: 'zero-trust',
+    title: 'Zero-Trust Architecture & Adversarial AI',
+    icon: 'shield',
+    description: 'Building robust security systems, adversarial machine learning, threat detection, and zero-trust network models.',
   },
   {
     id: 'open',
     title: 'Open Innovation',
     icon: 'lightbulb',
-    description: 'Any creative solution that solves real-world problems. Sky is the limit!',
+    description: 'A wildcard track for solving unconventional problems using emerging tech like Web3, AR/VR, or IoT. Bring your most creative and boundary-pushing ideas that don\'t fit into traditional categories but offer high value.',
   },
 ];
 
 const iconComponents: Record<string, React.ReactNode> = {
-  sprout: <Sprout className="w-8 h-8" />,
+  globe: <Globe className="w-8 h-8" />,
   landmark: <Landmark className="w-8 h-8" />,
   heart: <HeartPulse className="w-8 h-8" />,
-  glasses: <Glasses className="w-8 h-8" />,
+  shield: <ShieldCheck className="w-8 h-8" />,
   lightbulb: <Lightbulb className="w-8 h-8" />,
 };
 
@@ -51,28 +51,28 @@ const themeColors: Record<string, {
   icon: string;
   bg: string;
 }> = {
-  agriculture: {
+  'digital-inclusion': {
+    gradient: 'from-cyan-400 to-blue-600',
+    border: 'border-cyan-500/30 hover:border-cyan-400',
+    glow: 'group-hover:shadow-cyan-500/30',
+    icon: 'text-cyan-400',
+    bg: 'bg-cyan-500/10',
+  },
+  fintech: {
     gradient: 'from-green-400 to-emerald-600',
     border: 'border-green-500/30 hover:border-green-400',
     glow: 'group-hover:shadow-green-500/30',
     icon: 'text-green-400',
     bg: 'bg-green-500/10',
   },
-  fintech: {
-    gradient: 'from-blue-400 to-indigo-600',
-    border: 'border-blue-500/30 hover:border-blue-400',
-    glow: 'group-hover:shadow-blue-500/30',
-    icon: 'text-blue-400',
-    bg: 'bg-blue-500/10',
-  },
-  healthcare: {
-    gradient: 'from-rose-400 to-red-600',
+  bioconvergence: {
+    gradient: 'from-rose-400 to-pink-600',
     border: 'border-rose-500/30 hover:border-rose-400',
     glow: 'group-hover:shadow-rose-500/30',
     icon: 'text-rose-400',
     bg: 'bg-rose-500/10',
   },
-  arvr: {
+  'zero-trust': {
     gradient: 'from-purple-400 to-violet-600',
     border: 'border-purple-500/30 hover:border-purple-400',
     glow: 'group-hover:shadow-purple-500/30',

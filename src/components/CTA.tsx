@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Rocket, Users, Trophy, Clock, Sparkles } from 'lucide-react';
+import { Rocket, Users, Trophy, Clock, Sparkles } from 'lucide-react';
 
 const stats = [
   { icon: Clock, value: '24', label: 'Hours', color: 'cyan' },
@@ -131,13 +131,9 @@ export function CTA() {
             transition={{ delay: 0.6 }}
             className="flex flex-col items-center gap-4"
           >
-            <motion.a
-              href="https://unstop.com/hackathon"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.div
               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative inline-flex items-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-full overflow-hidden"
+              className="group relative inline-flex items-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-full overflow-hidden cursor-default"
             >
               {/* Animated gradient background */}
               <motion.div
@@ -154,22 +150,13 @@ export function CTA() {
 
               {/* Content */}
               <span className="relative z-10 font-display font-bold text-lg md:text-xl text-black">
-                Register on Unstop
+                Registration Open Soon
               </span>
-              <motion.span
-                animate={{ x: [0, 5, 0] }}
-                transition={{ repeat: Infinity, duration: 1.5 }}
-                className="relative z-10"
-              >
-                <ArrowRight className="w-6 h-6 text-black" />
-              </motion.span>
-
-              {/* Shine effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
-            </motion.a>
+              <Sparkles className="w-6 h-6 text-black relative z-10" />
+            </motion.div>
 
             <p className="text-gray-500 text-sm">
-              Registration closes on <span className="text-white font-medium">25th February, 2026</span>
+              Stay tuned for registration updates!
             </p>
           </motion.div>
         </motion.div>

@@ -9,7 +9,7 @@ const timelineEvents: TimelineEvent[] = [
     date: '28th Feb',
     time: '10:00 AM',
     title: 'Hackathon Kickoff',
-    description: 'Opening ceremony, team registration, and problem statement release.',
+    description: 'Opening ceremony, team registration and coding starts.',
   },
   {
     id: '2',

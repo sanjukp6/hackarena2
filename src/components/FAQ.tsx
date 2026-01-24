@@ -10,20 +10,17 @@ interface FAQItem {
 const faqItems: FAQItem[] = [
     {
         question: 'Who can participate in HackArena 1.0?',
-        answer: 'Any undergraduate or postgraduate student from any recognized institution can participate. Teams can have 2-4 members from the same or different institutions.',
+        answer: 'Any undergraduate student from any recognized institution can participate. Teams can have 2-4 members from the same or different institutions.',
     },
     {
         question: 'Is there a registration fee?',
-        answer: 'No, participation in HackArena 1.0 is completely free! We believe in making innovation accessible to everyone.',
+        answer: 'Initial idea submission is completely free! Teams selected for the offline round will need to pay ₹1200 as registration fee. We believe in making innovation accessible to everyone.',
     },
     {
         question: 'What should I bring to the hackathon?',
         answer: 'Bring your laptop, charger, student ID, and any hardware you plan to use. We will provide food, snacks, and workspace throughout the event.',
     },
-    {
-        question: 'Do I need to have a team beforehand?',
-        answer: 'While having a team is recommended, we will have a team formation session before the hackathon kicks off for solo participants.',
-    },
+
     {
         question: 'What are the judging criteria?',
         answer: 'Projects will be judged on Innovation (30%), Technical Complexity (25%), Design & UX (20%), Impact & Scalability (15%), and Presentation (10%).',
@@ -144,7 +141,7 @@ export function FAQ() {
                 >
                     <p className="text-gray-500 mb-4">Still have questions?</p>
                     <a
-                        href="mailto:hackarena@bfriengineeringedu.org"
+                        href="mailto:biet.hackarena@gmail.com"
                         className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full text-cyan-400 hover:border-cyan-400 transition-colors"
                     >
                         Contact Us
