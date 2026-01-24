@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import { Sparkles, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
 import type { Sponsor } from '@/types';
 
 const sponsors: Sponsor[] = [
-  { id: '1', name: 'Rakuten', logo: 'RAKUTEN' },
-  { id: '2', name: 'Rapido', logo: 'RAPIDO' },
-  { id: '3', name: 'Inube', logo: 'INUBE' },
-  { id: '4', name: 'Logic Brackets', logo: 'LOGIC BRACKETS' },
+  { id: '1', name: 'Rakuten', logo: '/rakuten-logo.jpg' },
+  { id: '2', name: 'Rapido', logo: '/rapido-logo.png' },
+  { id: '3', name: 'Inube', logo: '/inube-logo.png' },
+  { id: '4', name: 'Logic Brackets', logo: '/logicbrackets-logo.jpg' },
 ];
 
 export function Sponsors() {
@@ -49,13 +49,9 @@ export function Sponsors() {
         </p>
       </motion.div>
 
-      {/* Single Marquee Row - All sponsors visible */}
-      <div className="max-w-6xl mx-auto px-2">
-        <motion.div
-          animate={{ x: [-10, 10, -10] }}
-          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-          className="flex gap-2 md:gap-6 justify-center flex-wrap md:flex-nowrap"
-        >
+      {/* Sponsors Grid */}
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {sponsors.map((sponsor, index) => (
             <motion.div
               key={sponsor.id}
@@ -66,28 +62,29 @@ export function Sponsors() {
               whileHover={{ scale: 1.05, y: -5 }}
               className="group cursor-pointer"
             >
-              <div className="relative px-4 py-3 md:px-10 md:py-6 bg-gradient-to-br from-yellow-500/15 to-orange-500/15 backdrop-blur-xl rounded-lg md:rounded-xl border-2 border-yellow-500/40 overflow-hidden transition-all duration-500 hover:border-yellow-400 hover:shadow-[0_0_50px_rgba(234,179,8,0.5)]">
+              <div className="relative p-4 md:p-6 bg-white rounded-xl md:rounded-2xl border-2 border-yellow-500/40 overflow-hidden transition-all duration-500 hover:border-yellow-400 hover:shadow-[0_0_50px_rgba(234,179,8,0.3)]">
                 {/* Pulsing glow background */}
                 <motion.div
-                  animate={{ opacity: [0.2, 0.5, 0.2] }}
+                  animate={{ opacity: [0.1, 0.2, 0.1] }}
                   transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
-                  className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 via-orange-500/20 to-yellow-500/20"
+                  className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 via-orange-500/10 to-yellow-500/10"
                 />
 
                 {/* Shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
 
-                <div className="relative flex items-center gap-2 md:gap-3">
-                  <Sparkles className="w-4 h-4 md:w-6 md:h-6 text-yellow-400" />
-                  <span className="font-display text-xs md:text-xl font-black text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300 drop-shadow-[0_0_12px_rgba(234,179,8,0.6)]">
-                    {sponsor.logo}
-                  </span>
-                  <Sparkles className="w-4 h-4 md:w-6 md:h-6 text-yellow-400" />
+                {/* Logo Image */}
+                <div className="relative flex items-center justify-center h-16 md:h-24">
+                  <img
+                    src={sponsor.logo}
+                    alt={`${sponsor.name} logo`}
+                    className="max-h-full max-w-full object-contain"
+                  />
                 </div>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
 
       {/* Decorative bottom line */}
