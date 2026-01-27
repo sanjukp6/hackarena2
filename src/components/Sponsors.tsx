@@ -7,6 +7,7 @@ const sponsors: Sponsor[] = [
   { id: '2', name: 'Rapido', logo: '/rapido-logo.png' },
   { id: '3', name: 'Inube', logo: '/inube-logo.png' },
   { id: '4', name: 'Logic Brackets', logo: '/logicbrackets-logo.jpg' },
+  { id: '5', name: 'Cleo', logo: '/cleo-logo.jpg' },
 ];
 
 export function Sponsors() {
